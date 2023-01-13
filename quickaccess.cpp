@@ -74,6 +74,8 @@ QuickAccess::QuickAccess(QMainWindow* mwnd) : QDialog(mwnd){
     completer->setModel(completerEntries);
     completer->setCompletionMode(QCompleter::PopupCompletion);
     completer->setFilterMode(Qt::MatchContains);
+    
+    completer->popup()->setMinimumWidth(600);
 
     txt->setCompleter(completer);
 }
