@@ -72,11 +72,13 @@ QuickAccess::QuickAccess(QMainWindow* mwnd) : QDialog(mwnd){
     completerEntries->setStringList(actionList);
     completer->setCaseSensitivity(Qt::CaseInsensitive);
     completer->setModel(completerEntries);
+
+    completer->setMaxVisibleItems(20);
+    completer->popup()->setMinimumWidth(500);
+	
     completer->setCompletionMode(QCompleter::PopupCompletion);
     completer->setFilterMode(Qt::MatchContains);
     
-    completer->popup()->setMinimumWidth(600);
-
     txt->setCompleter(completer);
 }
 
